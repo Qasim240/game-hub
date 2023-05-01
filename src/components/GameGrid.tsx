@@ -1,26 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import ApiClinet from '../Services/Api-clinet';
-
-interface Game {
-    id: number;
-    name: string;
-}
-
-interface FetchGamesResponse {
-    count: number;
-    results: Game[];
-}
+import useGame from "../Hooks/useGame"
 
 export const GameGrid = () => {
-    const [games, setGames] = useState<Game[]>([]);
-    const [error, setError] = useState('');
-
-    useEffect(() => {
-        ApiClinet.get<FetchGamesResponse>('/games')
-            .then(res => setGames(res.data.results))
-            .catch(err => setError(err.message));
-    }, []) // add empty dependency array here
-
+ const {games, error} = useGame();
     return (
         <>
          { error && <text>{error}</text>}
