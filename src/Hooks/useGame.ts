@@ -2,10 +2,19 @@ import { useState, useEffect } from "react";
 import ApiClinet from "../Services/Api-clinet";
 import { CanceledError } from "axios";
 ApiClinet
+
+export interface platform{
+    id:number;
+    name:string;
+    slug: string;
+}
+
+
 export interface Game {
     id: number;
     name: string;
     background_image:string;
+    parent_platforms: {platform: platform}[]
 }
 
 interface FetchGamesResponse {
