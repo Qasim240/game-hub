@@ -2,15 +2,15 @@ import { FaWindows, FaPlaystation, Fa500Px, FaXbox, FaApple, FaLinux, FaAndroid 
 // import { MdphoneIphone } from 'react-icons/si';
 import { SiNintendo } from 'react-icons/si';
 import { BsGlobe } from 'react-icons/bs';
-import { HStack, Icon, Text } from '@chakra-ui/react'
-import { platform } from '../Hooks/useGame'
+import { HStack, Icon, Text } from '@chakra-ui/react';
+import { Platform } from '../Hooks/useGame';
 import { IconType } from 'react-icons';
 interface props {
-    platforms: platform[]
+    platforms: Platform[]
 }
 const PlatFormiconList = ({ platforms }: props) => {
-    const iconMap: {[key: string]: IconType} = {
-        
+    const iconMap: { [key: string]: IconType } = {
+
         pc: FaWindows,
         playstation: FaPlaystation,
         xbox: FaXbox,
@@ -23,13 +23,13 @@ const PlatFormiconList = ({ platforms }: props) => {
 
     }
 
-    
+
     return (
         <>
-        <HStack marginY={1}>
-            {platforms.map((platform) => (
-            <Icon as = {iconMap[platform.slug]} color='gray.500' />
-            ))}
+            <HStack marginY={1}>
+                {platforms.map((platform) => (
+                    <Icon key={platform.id} as={iconMap[platform.slug]} color='gray.500' />
+                ))}
             </ HStack>
         </>
     )
