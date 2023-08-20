@@ -1,4 +1,5 @@
 // Assuming the correct paths for the imports
+import { GameQuery } from "../App";
 import useData from "./useData"; // Replace 'path_to_useData_file' with the correct path
 import { Genre } from "./UseGenre";
 
@@ -16,5 +17,12 @@ export interface Game {
   metacritic: number;
 }
 
-const useGame = (selectedGenre: Genre | null) => useData<Game>('games', {params: {genres: selectedGenre?.id}}, [selectedGenre?.id]);
+const useGame = (
+gameQuery: GameQuery
+  
+  
+  ) => 
+useData<Game>('games', {params: {genres: gameQuery.genre?.id, platforms: gameQuery.platform?.id}}, 
+[gameQuery
+]);
 export default useGame;
