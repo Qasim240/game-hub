@@ -4,6 +4,7 @@ import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import { Genre } from "../Hooks/UseGenre";
 import { GameQuery } from "../App";
+import Emojis from "./Emojis";
 interface props{
   GameQuery: GameQuery
 }
@@ -25,6 +26,7 @@ export const GameGrid = ({GameQuery}: props) => {
           <GameCard key={game.id} game={game} />
 
         ))}
+      
       </SimpleGrid>
     </>
   );
