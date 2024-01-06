@@ -10,7 +10,7 @@ interface props{
 const GenreList = ({SelectedGenre, onSelectGenre}: props) => {
     const { data, isLoading } = useGenres();
 
-    if(isLoading) return  <Skeleton height="1000px"/>;
+    if(isLoading) return  <Skeleton height="1200px"/>;
 
     return (
         <>
@@ -18,7 +18,7 @@ const GenreList = ({SelectedGenre, onSelectGenre}: props) => {
             <List>
                 {data.map(genre => <ListItem key={genre.id} paddingY='5px'>
                     <HStack backgroundColor='grey'paddingX='10px' paddingY='5px' borderRadius='10px'>
-                        <Image boxSize='32px' borderRadius='8px' src={getCroppedImageUrl(genre.image_background)} />
+                        <Image boxSize='32px' borderRadius='50px' src={getCroppedImageUrl(genre.image_background)} />
 
                         <Button fontWeight={genre.id === SelectedGenre?.id ? 'bold' : 'normal'} color={genre.id === SelectedGenre?.id ? 'black' : 'white'}  onClick={()=> onSelectGenre(genre)} variant='link' bgColor='transparent' width='100%' fontSize='lg'>{genre.name}</Button>
 

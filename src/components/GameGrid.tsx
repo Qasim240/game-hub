@@ -15,10 +15,10 @@ export const GameGrid = ({GameQuery}: props) => {
   return (
     <>
       {error && <text>{error}</text>}
-      <SimpleGrid columns={{ sm: 1, md: 2, lg: 2, xl: 3 }} spacing={5}>
+      <SimpleGrid columns={{ sm: 1, md: 2, lg: 2, xl: 3 }}  spacing={5}>
         {isLoading && Skeleton.map(Skeleton =>
           
-          <GameCardSkeleton key={Skeleton} />
+          <GameCardSkeleton  key={Skeleton} />
           
           )}
         {data.map((game) => (

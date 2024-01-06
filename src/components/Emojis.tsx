@@ -1,4 +1,3 @@
-import React from 'react'
 import bullseye  from '../assets/bulls-eye.webp';
 import meh  from '../assets/meh.webp';
 import thumbsup  from '../assets/thumbs-up.webp';
@@ -16,11 +15,10 @@ const Emojis = ({rating}: props) => {
     }
 
 
-  
+
     return (
         <>
            <Image {...EmojiMap[rating]} marginY={2} /> 
-
         </>
     )
 }
