@@ -21,7 +21,7 @@ const SearchInput: React.FC<Props> = ({ onSearch }) => {
           <InputLeftElement>
             <BsSearch />
           </InputLeftElement>
-          <Input ref={ref} type="tel" placeholder="Phone number" />
+          <Input ref={ref} type="tel" placeholder="Search game" />
         </InputGroup>
       </form>
     </Box>
